@@ -1,6 +1,6 @@
 {
   "appId": "com.mahi.ai",
   "appName": "Mahi AI",
-  "webDir": ".",
+  "webDir": "www"
   "bundledWebRuntime": false
 }
