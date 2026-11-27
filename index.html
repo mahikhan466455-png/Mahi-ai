@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>Mahi AI</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header><div class="logo">M</div><div><h1>Mahi AI</h1><p>आपका AI सहायक</p></div><button id="settingsBtn" class="icon-btn" aria-label="सेटिंग">⚙</button></header>
+    <section id="messages" class="messages">
+      <div class="bubble assistant">नमस्ते! मैं Mahi AI हूँ। मुझसे कुछ भी पूछिए।<small>शुरू करने के लिए नीचे संदेश लिखें।</small></div>
+    </section>
+    <form id="chatForm" class="composer">
+      <textarea id="prompt" rows="1" placeholder="अपना संदेश लिखें..." required></textarea>
+      <button id="sendBtn" type="submit">भेजें</button>
+    </form>
+    <p class="foot">Mahi AI • जवाब पाने के लिए API key सेटिंग में जोड़ें।</p>
+  </main>
+  <dialog id="settings">
+    <form method="dialog" class="settings">
+      <h2>AI सेटिंग</h2>
+      <p>Gemini API key डालें। इसे अपने फोन पर निजी रखें।</p>
+      <input id="apiKey" type="password" placeholder="Gemini API key">
+      <label>मॉडल
+        <select id="model">
+          <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+          <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+        </select>
+      </label>
+      <div class="actions"><button value="cancel" class="secondary">बंद करें</button><button id="saveSettings" value="default">सेव करें</button></div>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
