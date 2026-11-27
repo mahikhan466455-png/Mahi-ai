@@ -29,18 +29,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Prepare web files
+        run: |
+          mkdir -p www
+          cp index.html style.css app.js manifest.webmanifest sw.js www/
+          test -f www/index.html
+
       - name: Add Android platform
         run: npx cap add android
 
       - name: Sync Capacitor
         run: npx cap sync android
-
-      - name: Ensure Capacitor plugins file exists
-        run: |
-          mkdir -p android/app/src/main/assets
-          if [ ! -f android/app/src/main/assets/capacitor.plugins.json ]; then
-            echo '[]' > android/app/src/main/assets/capacitor.plugins.json
-          fi
 
       - name: Build APK
         run: |
@@ -53,4 +52,3 @@ jobs:
         with:
           name: Mahi-AI-APK
           path: android/app/build/outputs/apk/debug/app-debug.apk
-          
