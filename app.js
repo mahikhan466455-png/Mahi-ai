@@ -1,6 +1,6 @@
 const form=document.querySelector('#chatForm'), promptBox=document.querySelector('#prompt'), messages=document.querySelector('#messages'), sendBtn=document.querySelector('#sendBtn'), dialog=document.querySelector('#settings'), keyInput=document.querySelector('#apiKey'), modelSelect=document.querySelector('#model');
 keyInput.value=localStorage.getItem('mahi_api_key')||'';
-modelSelect.value=localStorage.getItem('mahi_model')||'gemini-2.5-flash';
+modelSelect.value=localStorage.getItem('mahi_model')||'gemini-3.8-flash';
 document.querySelector('#settingsBtn').addEventListener('click',()=>dialog.showModal());
 document.querySelector('#saveSettings').addEventListener('click',()=>{localStorage.setItem('mahi_api_key',keyInput.value.trim());localStorage.setItem('mahi_model',modelSelect.value);});
 function bubble(text,who){const el=document.createElement('div');el.className=`bubble ${who}`;el.textContent=text;messages.appendChild(el);messages.scrollTop=messages.scrollHeight;return el;}
